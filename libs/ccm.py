@@ -12,18 +12,18 @@ class AESCipher(object):
         """
         self._salt = lambda x: [random.choice(x) for i in range(16)]
 
-    def __main__(self, KEY, SALT=''):
+    def __main__(self, KEY: 'generated secret key', SALT:'16 bytes length'=''):
         self.SALT = SALT if SALT else "".join(self._salt(alphabet))
         self.KEY = hashlib.pbkdf2_hmac('sha256', KEY.encode(), self.SALT.encode(), 100000)[:32]
 
-    def __encrypt__(self, RAW):
+    def __encrypt__(self, RAW: 'raw data bytes') -> 'AES256 encrypted content encoded in base64':
         _raw = pad(RAW, AES.block_size)
         IV = Random.new().read(AES.block_size)
         Cipher = AES.new(self.KEY, AES.MODE_CBC, IV)
 
         return base64.b64encode(self.SALT.encode() + base64.b64encode(IV + Cipher.encrypt(_raw)))
 
-    def __decrypt__(self, CPT):
+    def __decrypt__(self, CPT: 'AES256 encrypted content encoded in base64') -> 'raw data bytes':
         CPT = base64.b64decode(CPT)
         IV = CPT[:AES.block_size]
         Cipher = AES.new(self.KEY, AES.MODE_CBC, IV)
