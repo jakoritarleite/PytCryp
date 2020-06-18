@@ -13,7 +13,7 @@ class Main(object):
         self.Manager = Manager()
 
     def __main__(self):
-        self.Operation = 0 if 0 in [ 1 if _file.endswith('.pcrp') else 0 for _file in Discover('/home/test').__start__() ] else 1
+        self.Operation = 0 if 0 in [ 1 if _file.endswith('.pcrp') else 0 for _file in Discover(self.Path).__start__() ] else 1
         self.__start__()
 
     def __start__(self):
@@ -21,7 +21,7 @@ class Main(object):
             For OPERATION == 1 it will decrypt
             And for OPERATION == 0 it will crypt
         """
-        self.Files = [ _file for _file in Discover('/home/test').__start__() ]
+        self.Files = [ _file for _file in Discover(self.Path).__start__() ]
 
         if self.Operation:
             self.__dec__()
