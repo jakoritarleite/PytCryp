@@ -27,7 +27,7 @@ class Discover(object):
         ]
 
 
-    def __start__(self):
+    def __start__(self) -> 'every file in the given path':
         for dirPath, directories, files in os.walk(self.startPath):
             for _file in files:
                 absolutePath = os.path.abspath(os.path.join(dirPath, _file))
