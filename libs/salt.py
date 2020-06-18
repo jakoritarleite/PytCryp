@@ -1,0 +1,1 @@
+alphabet = '~!@#$%^&*()_+-=09={}\][:;<,>.?/0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`-_=+[{}]\|,<>./?*)(&^%$#@!0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`!@#$%^&*()-_=+{]}[|\;:,<>./?'
