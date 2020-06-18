@@ -18,8 +18,8 @@ class Main(object):
 
     def __start__(self):
         """
-            For OPERATION == 1 it will decrypt
-            And for OPERATION == 0 it will crypt
+            For Operation == 1 it will decrypt
+            And for OPeration == 0 it will crypt
         """
         self.Files = [ _file for _file in Discover(self.Path).__start__() ]
 
